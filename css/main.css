@@ -3678,3 +3678,6 @@ h4 {
     width: 100px;
   }
 }
+
+.wrapper {
+  position:fixed !important;
