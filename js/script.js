@@ -80,8 +80,8 @@ document.addEventListener("click", function (e) {
 		console.log(searchDropDownBtn)
 	}
 });
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// модальные окна 
+/* MODAL WINDOWS
+**************************************************************/
 const openModalBtn = document.getElementById('contact-me-btn')
 const modalContainer = document.getElementById('modal--contact-me')
 const modalSuccess = document.getElementById('modal--success')
@@ -181,7 +181,8 @@ function cb() { }
 //   liSubMenu.forEach(el => 
 //       el.addEventListener('click', revealSubMenu))
 
-
+/* DROP DOWN SUB MENUS
+**************************************************************/
 $(function () {
 
 	//BEGIN
@@ -240,24 +241,26 @@ $(function () {
 });
 
 
-
+/* MOBILE MENU
+**************************************************************/
 
 $(function () {
 	$(".nav__icon").on("click", function () {
 	  $(this).toggleClass("active");
 	  $(".sidebar").slideToggle();
 	  $(".icons-top").toggleClass('icons-top--fixed');
+	  $(".wrapper").toggleClass('wrapper--mobile-fixed')
 	});
   
 	$(window).on("load resize", function () {
 	  var w = $(window).width();
-	  var h = $(window).height();
+	
 	  var x = 1024;
-	  if (w >= x) {
-		$(".sidebar").css({ display: "block", height: "100vh" });
+	  if (w >=  x) {
+		$(".sidebar").addClass('show')
 	
 	  } else {
-		$(".sidebar").css({ display: "none", height: "100vh" });
+		$(".sidebar").removeClass('show')
 	  }
 	});
   });
@@ -265,7 +268,7 @@ $(function () {
 
 
   
-/* Swiper
+/* NEWS SLIDER MOBILE
 **************************************************************/
 var swiper= Swiper;
 var init = false;
